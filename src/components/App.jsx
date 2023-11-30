@@ -36,12 +36,22 @@ export class App extends Component {
       <ul className="feedback">
           <li>Good: <span>{ this.state.good}</span></li>
         <li>Neutral: <span>{ this.state.neutral}</span></li>
-        <li>Bad: <span>{ this.state.bad}</span></li>
+        <li>Bad: <span>{this.state.bad}</span></li>
+          <li>Total: {this.countTotalFeedback()}</li>
+          <li>Positive feedback: {this.countPositiveFeedbackPercentage()}%</li>
         </ul>
       </div>
 
     </div>;
   }
+  countTotalFeedback = () => {
+    return this.state.good+this.state.neutral+this.state.bad;
+  }
+  countPositiveFeedbackPercentage = () => {
+    return Math.round( this.state.good/this.countTotalFeedback()*100);
+  }
+
+
   onClick = (event) => {
     switch (event.target.innerText) {
       case 'Good':
