@@ -73,6 +73,8 @@ export class App extends Component {
       case 'Bad':
         this.setState({ bad: this.state.bad + 1 });
         break;
+      default:
+        break;
     }
 }
 
