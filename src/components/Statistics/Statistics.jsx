@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import { Notification } from "./Notification";
+import { Notification } from "../Notification/Notification";
 
 
 export class Statistics extends Component {
 
     render() {
     return <div>
-      {/* <h2>Statistics</h2> */}
         {this.props.total > 0 ?
             (<ul className="feedback">
           <li>Good: <span>{ this.props.good}</span></li>
